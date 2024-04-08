@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Botão de voltar -->
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item style="padding-top: 5%;" color="tertiary">
+    <ion-label style="height: 20vh;">
+      <ion-text style="padding-left: 35%;">
+        Foto do User
+      </ion-text>
+    </ion-label>
+  </ion-item>
+  <ion-card>
+    <ion-label>
+      <ion-list>
+        <ion-item style="font-style: italic;">
+          Nome de Usuário
+        </ion-item>
+        <ion-item [routerLink]="['/','account','userdata']">
+          Editar dados pessoais
+        </ion-item>
+        <ion-item [routerLink]="['/','account','favorites']">
+          Petshops Favoritos
+        </ion-item>
+        <ion-item [routerLink]="['/','account','settings']">
+          Configurações
+        </ion-item>
+        <ion-item (click)="GotoSignIn()" lines="none">
+          Sair
+        </ion-item>
+      </ion-list>
+    </ion-label>
+  </ion-card>
+
+  <!-- <ion-list>
+    <ion-buttons slot="start">
+       Botão de voltar 
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-list-header style="height: 20vh;" color="primary">
+      <ion-label>
+        <ion-text slot="center">
+          Foto User
+        </ion-text>
+      </ion-label>
+    </ion-list-header>
+  </ion-list> -->
+  <!-- <ion-header>
+    <ion-toolbar>
+      <ion-title size="large">account</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+</ion-content>

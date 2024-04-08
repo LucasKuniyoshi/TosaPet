@@ -1,0 +1,98 @@
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>Sumário</ion-title>
+    </ion-toolbar>
+  </ion-header> 
+
+  <ion-content class="ion-padding">
+    <ion-list lines="none">  
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img class="pet-friendliness" src="./assets/icon/petRating1.png">
+        </ion-thumbnail>
+        <ion-label>
+          <p>Aceitamos todos os tipos de raça.</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img class="pet-friendliness" src="./assets/icon/petRating3.png">
+        </ion-thumbnail>
+        <ion-label>
+          <p>Aceitamos todos, porém os descritos ao lado do carimbo possuem serviços limitados.</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img class="pet-friendliness" src="./assets/icon/petRating2.png">
+        </ion-thumbnail>
+        <ion-label>
+          <p>Aceitamos todos, exceto os descritos ao lado do carimbo.</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img class="pet-friendliness" src="./assets/icon/petRating4.png">
+        </ion-thumbnail>
+        <ion-label>
+          <p>Sem informações conhecidas.</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar color="danger"> 
+      <ion-icon class="user" name="person-circle-outline" (click)="GoToAccount()"></ion-icon>
+      <ion-buttons slot="end">
+        <ion-menu-button>
+          <img class="petinfo" src="./assets/icon/petRating.png">
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-title>TosaPet</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"> 
+    <ion-list>
+      <ion-item color="tertiary" style="border-radius: 2%;">
+        <ion-label style="height: 30vh; width: 94%;">
+          <ion-text style="margin-left: 135px;">Mapa</ion-text> 
+        </ion-label>
+      </ion-item>
+      <ion-item-group>
+        <ion-card> <!--style="padding-top: 5vh;"-->
+          <ion-searchbar animated="true"></ion-searchbar>
+          <app-petshop></app-petshop>
+          <ion-item>
+            Petshop 1
+          </ion-item>
+          <ion-item>
+            Petshop 2
+          </ion-item>
+          <ion-item>
+            Petshop 3
+          </ion-item>
+          <ion-item>
+            Petshop 4
+          </ion-item>
+          <ion-item>
+            Petshop 5
+          </ion-item>
+          <ion-item>
+            Petshop 6
+          </ion-item>
+          <ion-item>
+            Petshop 7
+          </ion-item>
+          <ion-item>
+            Petshop 8
+          </ion-item>
+        </ion-card>
+      </ion-item-group>
+    </ion-list>  
+  </ion-content>
+</div>
+
