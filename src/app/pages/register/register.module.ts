@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FavoritesPageRoutingModule } from './favorites-routing.module';
+import { RegisterPageRoutingModule } from './register-routing.module';
 
-import { FavoritesPage } from './favorites.page';
+import { RegisterPage } from './register.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
@@ -14,9 +14,10 @@ import { ComponentsModule } from 'src/app/components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    FavoritesPageRoutingModule,
+    RegisterPageRoutingModule,
+    ReactiveFormsModule, 
     ComponentsModule
   ],
-  declarations: [FavoritesPage]
+  declarations: [RegisterPage]
 })
-export class FavoritesPageModule {}
+export class RegisterPageModule {}

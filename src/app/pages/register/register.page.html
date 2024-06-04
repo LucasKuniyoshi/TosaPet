@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- cadastro de petshops -->
+    <ion-title>Cadastro</ion-title> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+  <ion-toggle color="dark">Habilitar cadastro</ion-toggle> <!--(ionChange)="habilitar()"-->
+  <app-sections [formPetshop]="formPetshop" (submitForm)="submitForm()"></app-sections>
+  <ion-button expand="block" fill="outline" color="dark">
+    <input type="file" (change)="uploadFile($event.target)" class="custom-file-input"/>
+    Inserir imagem
+  </ion-button>
+
+  <ion-button expand="block" color="dark" (click)="cadastrar()">Cadastrar</ion-button>
+</ion-content>
+
+<!-- <ion-content>
+  <ion-item  color="tertiary" class="ion-align-items-center">
+    <ion-icon name="calendar" style="margin-right: 5px; opacity: 0.47;"></ion-icon>      
+    <ion-label color="medium" class="ion-padding-end inline ion-text-wrap">Data de publicacao:</ion-label>
+    <ion-input type="date" minlength="4">
+      <ion-datetime presentation="time"></ion-datetime>
+    </ion-input>
+  </ion-item>
+  // <ion-datetime presentation="time"></ion-datetime>
+</ion-content> -->
