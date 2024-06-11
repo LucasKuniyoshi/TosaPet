@@ -13,17 +13,17 @@ export class FirebaseService {
   constructor(private firestore : AngularFirestore, private storage : AngularFireStorage) { }
 
   read(uid : string){
-    return this.firestore.collection(this.PATH,
-      ref => ref.where('uid', '==', uid))// ref => referencia // where => select no banco, buscando o uid
+    return this.firestore.collection(this.PATH).snapshotChanges();//,
+      //ref => ref.where('uid', '==', uid))// ref => referencia // where => select no banco, buscando o uid
       // poderia ter mais um ref com o nome de alguem no lugar do segundo uid => para buscas especificas
-    .snapshotChanges();
+    //.snapshotChanges();
   }
 
   create(petshop: Petshop){
     return this.firestore.collection(this.PATH)
     .add({name: petshop.name, dogType: petshop.dogType, address: petshop.address, contact: petshop.contact,
         openingHours: petshop.openingHours, hourEnding: petshop.hourEnding, rating: petshop.rating,
-        price: petshop.price, uid: petshop.uid});
+        price: petshop.price/*, uid: petshop.uid*/});
 
   }
 
@@ -31,14 +31,14 @@ export class FirebaseService {
     return this.firestore.collection(this.PATH)
     .add({name: petshop.name, dogType: petshop.dogType, address: petshop.address, contact: petshop.contact,
         openingHours: petshop.openingHours, hourEnding: petshop.hourEnding, rating: petshop.rating,
-        price: petshop.price, downloadURL : petshop.downloadURL, uid: petshop.uid});
+        price: petshop.price, downloadURL : petshop.downloadURL/*, uid: petshop.uid*/});
   }
 
   updateWithAvatar(petshop: Petshop, id: string){
     return this.firestore.collection(this.PATH).doc(id)
     .update({name: petshop.name, dogType: petshop.dogType, address: petshop.address, contact: petshop.contact,
         openingHours: petshop.openingHours, hourEnding: petshop.hourEnding, rating: petshop.rating,
-        price: petshop.price, downloadURL : petshop.downloadURL, uid: petshop.uid});
+        price: petshop.price, downloadURL : petshop.downloadURL/*, uid: petshop.uid*/});
   }
 
   uploadImage(imagem: any, petshop: Petshop){
@@ -71,7 +71,7 @@ export class FirebaseService {
     return this.firestore.collection(this.PATH).doc(id)
     .update({name: petshop.name, dogType: petshop.dogType, address: petshop.address, contact: petshop.contact,
         openingHours: petshop.openingHours, hourEnding: petshop.hourEnding, rating: petshop.rating,
-        price: petshop.price, uid: petshop.uid});
+        price: petshop.price/*, uid: petshop.uid*/});
   }
 
   delete(petshop: Petshop){

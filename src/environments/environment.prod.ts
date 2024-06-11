@@ -1,11 +1,12 @@
 export const environment = {
   production: true,
   firebaseConfig : {
-    apiKey: "AIzaSyCi1h6V90mmpvLX4xDEGgjkksklcjISGiI",
-    authDomain: "tosapet-2f2e3.firebaseapp.com",
-    projectId: "tosapet-2f2e3",
-    storageBucket: "tosapet-2f2e3.appspot.com",
-    messagingSenderId: "42800026734",
-    appId: "1:42800026734:web:d07e4e0271e0b77c2ac27f"
+    apiKey: "AIzaSyDkBv49oLULUu_-uEzAL2QXrAbpw7qZeJg",
+    authDomain: "tosa-pet.firebaseapp.com",
+    projectId: "tosa-pet",
+    storageBucket: "tosa-pet.appspot.com",
+    messagingSenderId: "814716359550",
+    appId: "1:814716359550:web:9b845988ef83a4a9df992f"
   }
-};
+}
+  

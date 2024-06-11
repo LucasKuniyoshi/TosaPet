@@ -5,13 +5,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="tertiary">
-  <ion-toggle color="dark">Habilitar cadastro</ion-toggle> <!--(ionChange)="habilitar()"-->
+<ion-content>
+  <!-- <ion-toggle color="dark">Habilitar cadastro</ion-toggle> (ionChange)="habilitar()" -->
   <!-- <app-sections [formPetshop]="formPetshop" (submitForm)="submitForm()"></app-sections> -->
   
   <form  [formGroup]="formPetshop" (submitForm)="submitForm()"> <!-- (ngSubmit)="onSubmit()" -->
     <ion-list>
-      <ion-item  color="tertiary" class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
+      <ion-item  class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
         <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
         <ion-label color="medium" class="ion-padding-end">Nome de Pet Shop:</ion-label>
         <ion-input type="string" formControlName="name"></ion-input>
@@ -22,7 +22,7 @@
       formPetshop.get('name')?.errors?.['required']" color="danger">Nome de Pet Shop é obrigatório</span><br/>
       
       <!--COLOCAR ISSO ABAIXO DENTRO DE UM SELECT COM O TIPO DE CARIMBO  -->
-      <ion-item  color="tertiary" class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
+      <ion-item  class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
         <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
         <ion-label color="medium" class="ion-padding-end">Raça(s) canina(s):</ion-label>
         <ion-input type="string" formControlName="dogType"></ion-input>
@@ -32,7 +32,7 @@
       <span style="width: 10%; margin-left: 4%;" *ngIf="formPetshop.get('dogType')?.touched &&
       formPetshop.get('dogType')?.errors?.['required']" color="danger">Raça(s) canina(s) é obrigatório</span><br/>
 
-      <ion-item  color="tertiary" class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
+      <ion-item  class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
         <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
         <ion-label color="medium" class="ion-padding-end">Endereço:</ion-label>
         <ion-input type="string" formControlName="address"></ion-input>
@@ -42,17 +42,7 @@
       <span style="width: 10%; margin-left: 4%;" *ngIf="formPetshop.get('address')?.touched &&
       formPetshop.get('address')?.errors?.['required']" color="danger">Endereço é obrigatório</span><br/>
 
-      <ion-item  color="tertiary" class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
-        <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
-        <ion-label color="medium" class="ion-padding-end">Endereço:</ion-label>
-        <ion-input type="string" formControlName="address"></ion-input>
-      </ion-item>
-      <!--Mensagem de Erro Titulo-->
-      <!-- touched => verifica no q sai do input-->
-      <span style="width: 10%; margin-left: 4%;" *ngIf="formPetshop.get('address')?.touched &&
-      formPetshop.get('address')?.errors?.['required']" color="danger">Endereço é obrigatório</span><br/>
-
-      <ion-item  color="tertiary" class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
+      <ion-item  class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
         <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
         <ion-label color="medium" class="ion-padding-end">Contato:</ion-label>
         <ion-input type="string" formControlName="contact"></ion-input>
@@ -63,7 +53,7 @@
       formPetshop.get('contact')?.errors?.['required']" color="danger">Contato é obrigatório</span><br/>
 
       <!--COLOCAR UM "HORÁRIO DE FUNCIONAMENTO" ANTES DESSES ITENS -->
-      <ion-item  color="tertiary" class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
+      <ion-item  class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
         <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
         <ion-label color="medium" class="ion-padding-end">Abertura:</ion-label>
         <ion-input type="number" formControlName="openingHours"></ion-input>
@@ -73,7 +63,7 @@
       <span style="width: 10%; margin-left: 4%;" *ngIf="formPetshop.get('openingHours')?.touched &&
       formPetshop.get('openingHours')?.errors?.['required']" color="danger">Horário de funcionamento é obrigatório</span><br/>
 
-    <ion-item  color="tertiary" class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
+    <ion-item  class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
       <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
       <ion-label color="medium" class="ion-padding-end">Fechamento:</ion-label>
       <ion-input type="number" formControlName="hourEnding"></ion-input>
@@ -83,7 +73,7 @@
     <span style="width: 10%; margin-left: 4%;" *ngIf="formPetshop.get('hourEnding')?.touched &&
     formPetshop.get('hourEnding')?.errors?.['required']" color="danger">Horário de funcionamento é obrigatório</span><br/>
 
-    <ion-item  color="tertiary" class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
+    <ion-item  class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
       <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
       <ion-label color="medium" class="ion-padding-end">Avaliação:</ion-label>
       <ion-input type="number" formControlName="rating"></ion-input>
@@ -93,7 +83,7 @@
     <span style="width: 10%; margin-left: 4%;" *ngIf="formPetshop.get('rating')?.touched &&
     formPetshop.get('rating')?.errors?.['required']" color="danger">Avaliação é obrigatório</span><br/>
 
-    <ion-item  color="tertiary" class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
+    <ion-item  class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
       <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
       <ion-label color="medium" class="ion-padding-end">Preço:</ion-label>
       <ion-input type="number" formControlName="price"></ion-input>
@@ -118,7 +108,7 @@
 </ion-content>
 
 <!-- <ion-content>
-  <ion-item  color="tertiary" class="ion-align-items-center">
+  <ion-item  class="ion-align-items-center">
     <ion-icon name="calendar" style="margin-right: 5px; opacity: 0.47;"></ion-icon>      
     <ion-label color="medium" class="ion-padding-end inline ion-text-wrap">Data de publicacao:</ion-label>
     <ion-input type="date" minlength="4">

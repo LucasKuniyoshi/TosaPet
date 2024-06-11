@@ -64,9 +64,11 @@
       </ion-item>
       <ion-item-group>
         <ion-card> <!--style="padding-top: 5vh;"-->
-          <ion-searchbar animated="true"></ion-searchbar>
-          <app-petshop></app-petshop>
-          <ion-item>
+          <app-searchbar (ionChange)="PetshopFilter($event)"></app-searchbar>
+          <ion-list>
+            <app-petshop *ngFor="let petshop of lista_Petshops" (click)="GoToDetails(petshop)" [petshop]="petshop"></app-petshop>
+            </ion-list>
+          <!-- <ion-item>
             Petshop 1
           </ion-item>
           <ion-item>
@@ -89,7 +91,7 @@
           </ion-item>
           <ion-item>
             Petshop 8
-          </ion-item>
+          </ion-item> -->
         </ion-card>
       </ion-item-group>
     </ion-list>  

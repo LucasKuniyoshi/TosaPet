@@ -47,14 +47,14 @@ export class RegisterPage implements OnInit {
       const {name, dogType, address, contact, openingHours, hourEnding, rating, price} = this.formPetshop.value;
       if (name && dogType && address && contact && openingHours && hourEnding && rating && price) {
         let novo:Petshop = new Petshop(name, dogType, address, contact, openingHours, hourEnding, rating, price);
-        novo.uid = this.user.uid;
+        // novo.uid = this.user.uid;
         if (this.imagem) {
           await this.firebase.uploadImage(this.imagem, novo);
         } else {
           await this.firebase.create(novo);
         }
         await this.alertService.dismissLoader();
-        this.alertService.presentAlert("Sucesso", "PetPetshop Salvo!");
+        this.alertService.presentAlert("Sucesso", "Petshop Salvo!");
         this.router.navigate(["/home"]);
       } else {
         await this.alertService.dismissLoader();
@@ -63,7 +63,7 @@ export class RegisterPage implements OnInit {
     } catch (error) {
       console.error('Erro ao cadastrar:', error);
       await this.alertService.dismissLoader(); // Certifique-se de ocultar o loader em caso de erro
-      this.alertService.presentAlert("Erro", "Erro ao salvar oPetshop.");
+      this.alertService.presentAlert("Erro", "Erro ao salvar o Petshop.");
     }
   }
   

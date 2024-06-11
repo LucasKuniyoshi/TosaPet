@@ -11,7 +11,7 @@ export class AlertService {
 
   async presentAlert(subHeader : string, message : string) {
     const alert = await this.alertController.create({
-      header: 'Biblioteca Pessoal',
+      header: 'TosaPet',
       subHeader: subHeader,
       message: message,
       buttons: ['OK'],
