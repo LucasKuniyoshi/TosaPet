@@ -27,7 +27,7 @@ export class HomePage {
     this.user = this.auth.getUserLogged();
 
     this.firebase.read(this.user).subscribe(res => {
-      this.lista_Petshops = res.map(petshop => ({ //mapea todos os livros pega id e puxa os dados
+      this.lista_Petshops = res.map(petshop => ({ //mapea todos os petshops pega id e puxa os dados
         id: petshop.payload.doc.id,
         ...petshop.payload.doc.data() as any
       } as Petshop));
@@ -46,13 +46,13 @@ export class HomePage {
   ngOnInit() {
     this.isLoading = true;
     setTimeout(() => {
-      // Colocar lista de livros
+      // Colocar lista de petshops
       this.lista_Petshops;
       this.isLoading = false;
     }, 3000); //  delay de 3 milissegundos
   }
 
-  // filtrar livros
+  // filtrar petshops
   PetshopFilter(event: any) {
     this.isLoading = true;
     const query = event.detail.value;
@@ -66,11 +66,11 @@ export class HomePage {
         } as Petshop)).filter(petshop =>
           petshop.name.toLowerCase().includes(query.toLowerCase()) //nome do petshop minusculo e ver se tem nome
         );
-        console.log('Livros encontrados:', this.lista_Petshops);
+        console.log('Petshops encontrados:', this.lista_Petshops);
         this.isLoading = false;
       });
     } else {
-      // se campo de busca estiver vazio recarrega todos os livros
+      // se campo de busca estiver vazio recarrega todos os petshops
       this.firebase.read(this.user).subscribe(res => {
         this.lista_Petshops = res.map(petshop => ({
           id: petshop.payload.doc.id,

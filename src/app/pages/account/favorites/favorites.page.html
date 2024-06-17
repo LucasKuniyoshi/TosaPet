@@ -11,7 +11,9 @@
 <ion-content>
   <ion-list>
     <ion-item-group>
-      <app-petshop></app-petshop>
+      <ion-list>
+        <app-petshop *ngFor="let petshop of lista_Petshops" (click)="GoToDetails(petshop)" [petshop]="petshop"></app-petshop>
+      </ion-list>
       <ion-item>
         <ion-label col="6">
           Pet shops fav 1
