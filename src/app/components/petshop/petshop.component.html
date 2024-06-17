@@ -18,19 +18,31 @@
   </ion-label>
 </ion-item> -->
 
-<ion-item>
-  <ion-card color="light" style="max-width: 80%; margin-left: 9.68%;"(click)="editar(petshop)">
-    <ion-card-header *ngIf="petshop.downloadURL != null">
+<ion-item (click)="editar(petshop)">
+  <ion-thumbnail slot="start">
+    <img [src]="petshop.downloadURL ? petshop.downloadURL : 'assets/imgs/PetshopDefault.png'">
+  </ion-thumbnail>
+  <ion-label> <!--color="light" style="max-width: 80%; margin-left: 9.68%;"-->
+    <h2>{{petshop.name}}</h2>
+    <ion-text color="medium">
+      <!-- COLOCAR CARIMBO -->
+      <p class="pStyle">{{petshop.dogType}}</p>
+      {{petshop.contact}}
+      <span><ion-icon name="star"></ion-icon> 
+        {{petshop.rating}}.
+      </span>
+    </ion-text>
+    <!-- <ion-card-header *ngIf="petshop.downloadURL != null">
       <img src="{{petshop.downloadURL}}" style="max-width: 100%; height: auto;"/>
     </ion-card-header>
     <ion-card-header *ngIf="petshop.downloadURL == null">
       <img src="assets/imgs/PetshopDefault.png"/>
     </ion-card-header>
     <ion-card-title>
-      <ion-label class="emailColor" style="margin-left: 5%;">{{petshop.name}}</ion-label>
+      <ion-label style="margin-left: 5%;">{{petshop.name}}</ion-label>
     </ion-card-title>
     <ion-card-subtitle>
-      <ion-label class="entrarColor" style="margin-left: 5%;">{{petshop.contact}}</ion-label>
-    </ion-card-subtitle>
-  </ion-card>
+      <ion-label class="contato" style="margin-left: 5%;">{{petshop.contact}}</ion-label>
+    </ion-card-subtitle> -->
+  </ion-label>
 </ion-item>

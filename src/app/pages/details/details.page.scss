@@ -1,0 +1,9 @@
+.centerItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info{
+    border-top-style: round($number: 25);
+}

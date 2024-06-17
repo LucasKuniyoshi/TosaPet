@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+ion-content {
+    --ion-background-color: #f3dbd3;
+}
+
+ion-toolbar{
+    --background: #f3dbd3;
+    --border-color:var(--background);
+}
+
+.emailColor {
+    color: #ea7c7c;
+}
+
+.entrarColor {
+    --background: #ec3434;
+    --background-activated: #ec3434;
+}
+
+span{
+    color: red;
+}

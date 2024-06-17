@@ -40,7 +40,7 @@ export class HomePage {
   }
 
   GoToDetails(petshop: Petshop){
-    this.router.navigateByUrl("/detalhar", { state: { petshop: petshop } });
+    this.router.navigateByUrl("/details", { state: { petshop: petshop } });
   }
 
   ngOnInit() {
