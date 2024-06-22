@@ -13,6 +13,15 @@
     <img src="./assets/imgs/SignupPet.gif">
     <h3 text-wrap class="emailColor" style="height: auto; margin-left: 15%; font-family: 'Playfair Display', serif;">Bem-vindo a tela de Cadastro</h3>
     <ion-item>
+      <ion-label position="floating" class="emailColor">Nome de usuário</ion-label>
+      <ion-input type="string" formControlName="userName"></ion-input> <!-- formControlName => no lugar de ngModel -->
+    </ion-item>
+    <!--Mensagem de Erro Email-->
+    <!-- touched => verifica no q sai do input-->
+    <span style="width: 10%; margin-left: 4%;" *ngIf="formCadastrar.get('userName')?.touched &&
+    formCadastrar.get('userName')?.errors?.['required']">Nome de usuário é obrigatório</span><br/>
+
+    <ion-item>
       <ion-label position="floating" class="emailColor">Email</ion-label>
       <ion-input type="email" formControlName="email"></ion-input> <!-- formControlName => no lugar de ngModel -->
     </ion-item>
@@ -23,6 +32,18 @@
     <!-- dirty => verifica no q vai digitando -->
     <span style="width: 10%; margin-left: 4%;" *ngIf="formCadastrar.get('email')?.dirty &&
     formCadastrar.get('email')?.errors?.['email']">Formato de email inválido</span>
+
+    <ion-item>
+      <ion-label position="floating" class="emailColor">Telefone</ion-label>
+      <ion-input type="tel" formControlName="phone"></ion-input> <!-- formControlName => no lugar de ngModel -->
+    </ion-item>
+    <!--Mensagem de Erro Email-->
+    <!-- touched => verifica no q sai do input-->
+    <span style="width: 10%; margin-left: 4%;" *ngIf="formCadastrar.get('phone')?.touched &&
+    formCadastrar.get('phone')?.errors?.['required']">Telefone é obrigatório</span><br/>
+    <!-- dirty => verifica no q vai digitando -->
+    <span style="width: 10%; margin-left: 4%;" *ngIf="formCadastrar.get('phone')?.dirty &&
+    formCadastrar.get('phone')?.errors?.['tel']">Formato de Telefone inválido</span>
 
     <ion-item>
       <ion-label position="floating" class="emailColor">Senha</ion-label>

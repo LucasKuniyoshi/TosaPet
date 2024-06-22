@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/common/alert.service';
 import { AuthService } from 'src/app/model/services/auth.service';
+import { UserService } from 'src/app/model/services/user.service';
 
 @Component({
   selector: 'app-signin',
@@ -13,7 +14,7 @@ export class SigninPage implements OnInit {
   formLogar : FormGroup //declara tudo as variveis numa só
 
   constructor(private router : Router, 
-    private alertService : AlertService ,private formBuilder : FormBuilder, private authService : AuthService  /*construtor de formulario*/) {
+    private alertService : AlertService ,private formBuilder : FormBuilder, private authService : AuthService, private userService: UserService  /*construtor de formulario*/) {
     this.formLogar = new FormGroup({ //instancia o formGroup
       email: new FormControl(''),
       senha: new FormControl('')

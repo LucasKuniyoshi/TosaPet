@@ -38,7 +38,9 @@ export class RegisterPage implements OnInit {
         dogType: new FormControl,
         address: new FormControl,
         contact: new FormControl,
-        openingHours: new FormControl
+        openingHours: new FormControl,
+        hourEnding: new FormControl,
+        rating: new FormControl,
       })
     }
 

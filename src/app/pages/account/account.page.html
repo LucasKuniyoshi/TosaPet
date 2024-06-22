@@ -22,8 +22,14 @@
     <ion-label>
       <ion-list>
         <ion-item style="font-style: italic;">
-          Nome de Usuário
+          {{user?.displayName || 'Usuário'}}
         </ion-item>
+        <!-- <ion-item>
+          <ion-icon name="call-outline"></ion-icon>
+          <ion-label style="margin-left: 5%;">
+            {{user.phone || 'Telefone não cadastrado'}}
+          </ion-label>
+        </ion-item> -->
         <ion-item [routerLink]="['/','account','userdata']">
           <ion-icon name="person-outline"></ion-icon>
           <ion-label style="margin-left: 5%;">
