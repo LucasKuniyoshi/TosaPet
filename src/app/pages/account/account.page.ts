@@ -57,11 +57,13 @@ export class AccountPage implements OnInit {
     this.auth.getUserLogged().subscribe(async user => {
       // O getUserLogged retorna o usuário autenticado do Firebase
       if (user) {
+        const customUser = this.userService.getUser();
         // Obtenha os dados do UserService que foram setados no cadastro
         await user.reload(); // Forçar a atualização dos dados do usuário
         const updatedUser = user.toJSON();
         const additionalUserData = this.userService.getUser();
-        this.user = { ...updatedUser, ...additionalUserData };
+        this.user = { ...updatedUser,...user,
+          customPhone: customUser.customPhone, ...additionalUserData };
         console.log('User loaded:', this.user);
       }
       console.log('User loaded:', this.user);
