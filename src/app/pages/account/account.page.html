@@ -21,8 +21,14 @@
   <ion-card>
     <ion-label>
       <ion-list>
-        <ion-item style="font-style: italic;">
-          {{user?.displayName || 'Usuário'}}
+        <ion-item *ngIf="user && user.userName" style="font-style: italic;">
+          {{user.userName}}
+        </ion-item>
+        <ion-item *ngIf="user && user.dogType" style="font-style: italic;">
+          {{user.dogType}}
+        </ion-item>
+        <ion-item *ngIf="user && user.phone" style="font-style: italic;">
+          {{user.phone}}
         </ion-item>
         <!-- <ion-item>
           <ion-icon name="call-outline"></ion-icon>

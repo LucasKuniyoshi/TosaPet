@@ -66,15 +66,14 @@
 //     }
 // }
 export default class User {
-    constructor(
-      public userName: string,
-      public email: string,
-      public phone: string,
-      public dogType: string,
-      public senha: string,
-      public uid?: string,
-      public downloadURL?: string,
-      public id?: string
-    ) {}
-  }
-  
+  constructor(
+    public userName: string,
+    public email: string,
+    public phone: string,
+    public dogType: string,
+    public senha: string,
+    public uid?: string,
+    public downloadURL?: string,
+    public id?: string
+  ) {}
+}
