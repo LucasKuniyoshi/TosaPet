@@ -1,19 +1,21 @@
 .profile-picture {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.6rem;
-  }
-  
-  .profile-picture-container ion-label img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-  }
-  
-  .center-button {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10%;
+}
+
+.profile-picture-container ion-label img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}

@@ -12,7 +12,10 @@
   <ion-item lines="none" style="padding-top: 5%;" color="tertiary">
     <ion-label>
       <ion-card class="profile-picture">
-        <ion-label>
+        <ion-label *ngIf="user?.downloadURL != null">
+          <img class="profile-picture" src="{{user?.downloadURL}}">
+        </ion-label>
+        <ion-label *ngIf="user?.downloadURL == null">
           <img src="./assets/imgs/avatar.png">
         </ion-label>
         <div>
@@ -27,13 +30,16 @@
     <ion-label>
       <ion-list>
         <ion-item style="font-style: italic;">
-          <ion-input placeholder="Nome de Usuário"></ion-input>
+          <ion-input placeholder="{{user?.userName}}"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input type="email" placeholder="Email"></ion-input>
+          <ion-input placeholder="{{user?.email}}"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input type="tel" placeholder="Telefone"></ion-input>
+          <ion-input placeholder="{{user?.dogType}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="{{user?.phone}}"></ion-input>
         </ion-item>
       </ion-list>
     </ion-label>
