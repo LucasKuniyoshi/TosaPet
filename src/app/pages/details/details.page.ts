@@ -40,7 +40,9 @@ export class DetailsPage implements OnInit {
       openingHours: ['', [Validators.required, Validators.min(0), Validators.max(24)]],
       hourEnding: ['', [Validators.required, Validators.min(0), Validators.max(24)]],
       rating: ['', [Validators.required, Validators.min(0), Validators.max(5)]],
-      price: ['', Validators.required]
+      price: ['', Validators.required],
+      priceMax: ['', Validators.required],
+      stamp: ['', Validators.required]
     });
   }
 
@@ -55,7 +57,9 @@ export class DetailsPage implements OnInit {
         openingHours: this.petshop.openingHours,
         hourEnding: this.petshop.hourEnding,
         rating: this.petshop.rating,
-        price: this.petshop.price
+        price: this.petshop.price,
+        priceMax: this.petshop.priceMax,
+        stamp: this.petshop.stamp
       });
     }
   }

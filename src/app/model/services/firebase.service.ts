@@ -23,7 +23,7 @@ export class FirebaseService {
     return this.firestore.collection(this.PATH)
     .add({name: petshop.name, dogType: petshop.dogType, address: petshop.address, contact: petshop.contact,
         openingHours: petshop.openingHours, hourEnding: petshop.hourEnding, rating: petshop.rating,
-        price: petshop.price/*, uid: petshop.uid*/});
+        price: petshop.price, priceMax: petshop.priceMax, stamp: petshop.stamp});
 
   }
 
@@ -31,14 +31,14 @@ export class FirebaseService {
     return this.firestore.collection(this.PATH)
     .add({name: petshop.name, dogType: petshop.dogType, address: petshop.address, contact: petshop.contact,
         openingHours: petshop.openingHours, hourEnding: petshop.hourEnding, rating: petshop.rating,
-        price: petshop.price, downloadURL : petshop.downloadURL/*, uid: petshop.uid*/});
+        price: petshop.price, downloadURL : petshop.downloadURL, priceMax: petshop.priceMax, stamp: petshop.stamp});
   }
 
   updateWithAvatar(petshop: Petshop, id: string){
     return this.firestore.collection(this.PATH).doc(id)
     .update({name: petshop.name, dogType: petshop.dogType, address: petshop.address, contact: petshop.contact,
         openingHours: petshop.openingHours, hourEnding: petshop.hourEnding, rating: petshop.rating,
-        price: petshop.price, downloadURL : petshop.downloadURL/*, uid: petshop.uid*/});
+        price: petshop.price, priceMax: petshop.priceMax, stamp: petshop.stamp, downloadURL : petshop.downloadURL/*, uid: petshop.uid*/});
   }
 
   uploadImage(imagem: any, petshop: Petshop){
@@ -71,7 +71,7 @@ export class FirebaseService {
     return this.firestore.collection(this.PATH).doc(id)
     .update({name: petshop.name, dogType: petshop.dogType, address: petshop.address, contact: petshop.contact,
         openingHours: petshop.openingHours, hourEnding: petshop.hourEnding, rating: petshop.rating,
-        price: petshop.price/*, uid: petshop.uid*/});
+        price: petshop.price, priceMax: petshop.priceMax, stamp: petshop.stamp/*, uid: petshop.uid*/});
   }
 
   delete(petshop: Petshop){

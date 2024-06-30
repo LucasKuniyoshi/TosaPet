@@ -8,11 +8,13 @@ export default class Petshop{
     private _dogType!: string;
     private _rating!: string;
     private _price!: number;
+    private _priceMax!: number;
+    private _stamp!: string;
     private _downloadURL: any;
     private _uid!: string;
     
     constructor(name: string, dogType: string, address: string, contact: string, openingHours: string, hourEnding: string,
-        rating: string, price: number){
+        rating: string, price: number, priceMax: number, stamp: string){
             this._name = name;
             this._dogType = dogType;
             this._address = address;
@@ -21,9 +23,24 @@ export default class Petshop{
             this._hourEnding = hourEnding;
             this._rating = rating;
             this._price = price;
-
+            this._priceMax = priceMax;
+            this._stamp = stamp;
     }
 
+    public get stamp(): string {
+        return this._stamp;
+    }
+    public set stamp(value: string) {
+        this._stamp = value;
+    }
+    
+    public get priceMax(): number {
+        return this._priceMax;
+    }
+    public set priceMax(value: number) {
+        this._priceMax = value;
+    }
+    
     public get name(): string {
         return this._name;
     }

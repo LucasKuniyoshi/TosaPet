@@ -21,6 +21,18 @@
       <span style="width: 10%; margin-left: 4%;" *ngIf="formPetshop.get('name')?.touched &&
       formPetshop.get('name')?.errors?.['required']" color="danger">Nome de Pet Shop é obrigatório</span><br/>
       
+      <ion-item >
+        <ion-icon name="reorder-four" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
+        <ion-label color="medium">
+          <ion-select label="Carimbo:" interface="action-sheet" placeholder="Insira o Carimbo" formControlName="stamp">
+            <ion-select-option value="stampgreen">Aceita todos</ion-select-option>
+            <ion-select-option value="stampblue">Serviços limitados</ion-select-option>
+            <ion-select-option value="stampyellow">Aceita todos menos:</ion-select-option>
+            <ion-select-option value="stampred">Sem informações</ion-select-option>
+          </ion-select>
+        </ion-label>
+      </ion-item>
+
       <!--COLOCAR ISSO ABAIXO DENTRO DE UM SELECT COM O TIPO DE CARIMBO  -->
       <ion-item  class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
         <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
@@ -85,13 +97,23 @@
 
     <ion-item  class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
       <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
-      <ion-label color="medium" class="ion-padding-end">Preço:</ion-label>
+      <ion-label color="medium" class="ion-padding-end">Preço Mínimo:</ion-label>
       <ion-input type="number" formControlName="price"></ion-input>
     </ion-item>
     <!--Mensagem de Erro Titulo-->
     <!-- touched => verifica no q sai do input-->
     <span style="width: 10%; margin-left: 4%;" *ngIf="formPetshop.get('price')?.touched &&
-    formPetshop.get('price')?.errors?.['required']" color="danger">Preço é obrigatório</span><br/>
+    formPetshop.get('price')?.errors?.['required']" color="danger">Preço mínimo é obrigatório</span><br/>
+
+    <ion-item  class="ion-align-items-center"> <!-- ngModel => linka com as variaveis criadas na ts-->
+      <ion-icon name="book-outline" style="margin-right: 5px; opacity: 0.47;"></ion-icon>
+      <ion-label color="medium" class="ion-padding-end">Preço Máximo:</ion-label>
+      <ion-input type="number" formControlName="priceMax"></ion-input>
+    </ion-item>
+    <!--Mensagem de Erro Titulo-->
+    <!-- touched => verifica no q sai do input-->
+    <span style="width: 10%; margin-left: 4%;" *ngIf="formPetshop.get('priceMax')?.touched &&
+    formPetshop.get('priceMax')?.errors?.['required']" color="danger">Preço máximo é obrigatório</span><br/>
 
       <!-- <span *ngIf="formPetshop.get('anoPublicacao')?.dirty && formPetshop.get('anoPublicacao')?.errors?.['pattern']">Ano de Publicação deve ser numérico</span><br>
       <span *ngIf="formPetshop.get('anoPublicacao')?.dirty && formPetshop.get('anoPublicacao')?.errors?.['min']">Ano de Publicação deve ser positivo</span><br> -->

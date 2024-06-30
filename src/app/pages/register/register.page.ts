@@ -25,6 +25,8 @@ export class RegisterPage implements OnInit {
   public hourEnding!: number;
   public rating!: number;
   public price!: number;
+  public priceMax!: number;
+  public stamp!: string;
 
   constructor(private firebase: FirebaseService, 
     private router : Router,
@@ -41,14 +43,17 @@ export class RegisterPage implements OnInit {
         openingHours: new FormControl,
         hourEnding: new FormControl,
         rating: new FormControl,
+        price: new FormControl,
+        priceMax: new FormControl,
+        stamp: new FormControl
       })
     }
 
   async cadastrar() {
     try {
-      const {name, dogType, address, contact, openingHours, hourEnding, rating, price} = this.formPetshop.value;
-      if (name && dogType && address && contact && openingHours && hourEnding && rating && price) {
-        let novo:Petshop = new Petshop(name, dogType, address, contact, openingHours, hourEnding, rating, price);
+      const {name, dogType, address, contact, openingHours, hourEnding, rating, price, priceMax, stamp} = this.formPetshop.value;
+      if (name && dogType && address && contact && openingHours && hourEnding && rating && price && priceMax && stamp) {
+        let novo:Petshop = new Petshop(name, dogType, address, contact, openingHours, hourEnding, rating, price, priceMax, stamp);
         // novo.uid = this.user.uid;
         if (this.imagem) {
           await this.firebase.uploadImage(this.imagem, novo);
@@ -100,6 +105,8 @@ export class RegisterPage implements OnInit {
       hourEnding: ['', [Validators.required]],
       rating: ['', [Validators.required]],
       price: ['', [Validators.required]],
+      priceMax: ['', [Validators.required]],
+      stamp: ['', [Validators.required]],
     });
     this.edicao = false;
   }

@@ -21,6 +21,18 @@
           <img src="assets/imgs/PetshopDefault.png" >
         </ion-label>
       </ion-item>
+      <ion-item *ngIf="petshop.stamp == 'stampgreen'">
+        <img src="assets/icon/petRating1.png">
+      </ion-item>
+      <ion-item *ngIf="petshop.stamp == 'stampblue'">
+        <img src="assets/icon/petRating3.png">
+      </ion-item>
+      <ion-item *ngIf="petshop.stamp == 'stampyellow'">
+        <img src="assets/icon/petRating2.png">
+      </ion-item>
+      <ion-item *ngIf="petshop.stamp == 'stampred'">
+        <img src="assets/icon/petRating4.png">
+      </ion-item>
       <ion-item>
         Raça(s) 
         <ion-text> : {{petshop.dogType}}</ion-text>

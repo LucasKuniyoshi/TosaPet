@@ -9,23 +9,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-item lines="none" style="padding-top: 5%;" color="tertiary">
-    <ion-label>
-      <ion-card class="profile-picture">
-        <ion-label *ngIf="user?.downloadURL != null">
-          <img class="profile-picture" src="{{user?.downloadURL}}">
-        </ion-label>
-        <ion-label *ngIf="user?.downloadURL == null">
-          <img src="./assets/imgs/avatar.png">
-        </ion-label>
-        <div>
-          <ion-button slot="center">
-            Alterar Foto
-          </ion-button>
-        </div>
-      </ion-card>
+  <ion-item lines="none" style="padding-top: 5%;">
+    <ion-label *ngIf="user?.downloadURL != null">
+      <img class="profile-picture" src="{{user?.downloadURL}}">
+    </ion-label>
+    <ion-label *ngIf="user?.downloadURL == null">
+      <img src="./assets/imgs/avatar.png">
     </ion-label>
   </ion-item>
+  <div style="display: flex; justify-content: center; padding-top: 10px;">
+    <ion-button color="tertiary" fill="outline" size="small" class="profile-picture" slot="center" style="width: 40%;">
+      Alterar Foto
+    </ion-button>
+  </div>
+  
   <ion-card>
     <ion-label>
       <ion-list>
