@@ -55,6 +55,34 @@
     formUser.get('dogType')?.errors?.['required']">Raça de seu pet é obrigatório</span><br/>
 
     <ion-item>
+      <ion-label position="floating" class="emailColor">Porte de seu pet</ion-label>
+      <ion-select interface="action-sheet" type="string" formControlName="size">
+        <ion-select-option value="Pequeno">Pequeno</ion-select-option>
+        <ion-select-option value="Médio">Médio</ion-select-option>
+        <ion-select-option value="Grande">Grande</ion-select-option>
+      </ion-select> <!-- formControlName => no lugar de ngModel -->
+    </ion-item>
+    <!--Mensagem de Erro Email-->
+    <!-- touched => verifica no q sai do input-->
+    <span style="width: 10%; margin-left: 4%;" *ngIf="formUser.get('size')?.touched &&
+    formUser.get('size')?.errors?.['required']">Porte de seu pet é obrigatório</span><br/>
+
+    <ion-item>
+      <ion-label position="floating" class="emailColor">Comportamento de seu pet</ion-label>
+      <ion-select interface="action-sheet" type="string" formControlName="behavior">
+        <ion-select-option value="Dócil">Dócil</ion-select-option>
+        <ion-select-option value="Manso">Manso</ion-select-option>
+        <ion-select-option value="Calmo">Calmo</ion-select-option>
+        <ion-select-option value="Falso manso">Falso manso</ion-select-option>
+        <ion-select-option value="Agressivo">Agressivo</ion-select-option>
+      </ion-select> <!-- formControlName => no lugar de ngModel -->
+    </ion-item>
+    <!--Mensagem de Erro Email-->
+    <!-- touched => verifica no q sai do input-->
+    <span style="width: 10%; margin-left: 4%;" *ngIf="formUser.get('behavior')?.touched &&
+    formUser.get('behavior')?.errors?.['required']">Comportamento de seu pet é obrigatório</span><br/>
+
+    <ion-item>
       <ion-label position="floating" class="emailColor">Senha</ion-label>
       <ion-input type="password" formControlName="senha"></ion-input> <!-- formControlName => no lugar de ngModel -->
     </ion-item>

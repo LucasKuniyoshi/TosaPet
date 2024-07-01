@@ -98,6 +98,8 @@ export class UserfirebaseService {
         email: user.email,
         phone: user.phone,
         dogType: user.dogType,
+        size: user.size,
+        behavior: user.behavior,
         senha: user.senha,
         uid: user.uid
       });
@@ -110,6 +112,8 @@ export class UserfirebaseService {
         email: user.email,
         phone: user.phone,
         dogType: user.dogType,
+        size: user.size,
+        behavior: user.behavior,
         senha: user.senha,
         downloadURL: user.downloadURL,
         uid: user.uid
@@ -123,6 +127,8 @@ export class UserfirebaseService {
         email: user.email,
         phone: user.phone,
         dogType: user.dogType,
+        size: user.size,
+        behavior: user.behavior,
         senha: user.senha,
         downloadURL: user.downloadURL,
         uid: user.uid
@@ -161,6 +167,8 @@ export class UserfirebaseService {
         email: user.email,
         phone: user.phone,
         dogType: user.dogType,
+        size: user.size,
+        behavior: user.behavior,
         senha: user.senha,
         uid: user.uid
       });
