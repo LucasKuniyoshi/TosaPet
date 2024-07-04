@@ -22,30 +22,37 @@
   <ion-thumbnail slot="start">
     <img [src]="petshop.downloadURL ? petshop.downloadURL : 'assets/imgs/PetshopDefault.png'">
   </ion-thumbnail>
-  <ion-label> <!--color="light" style="max-width: 80%; margin-left: 9.68%;"-->
+  <ion-label>
     <h2>{{petshop.name}}</h2>
-    <ion-button (click)="toggleFavorite(petshop.id)">
-      <ion-icon [name]="isFavorite(petshop.id) ? 'heart' : 'heart-outline'"></ion-icon>
-    </ion-button>
-    <ion-text color="medium">
-      <!-- COLOCAR CARIMBO -->
-      <p class="pStyle">{{petshop.dogType}}</p>
-      {{petshop.contact}}
-      <span><ion-icon name="star"></ion-icon> 
-        {{petshop.rating}}.
-      </span>
+    <ion-text >
+      <div class="dog-type-container">
+        <ion-img class="stampsize" *ngIf="petshop.stamp == 'stampgreen'" src="assets/icon/petRating1.png"></ion-img>
+        <ion-img class="stampsize" *ngIf="petshop.stamp == 'stampblue'" src="assets/icon/petRating3.png"></ion-img>
+        <ion-img class="stampsize" *ngIf="petshop.stamp == 'stampyellow'" src="assets/icon/petRating2.png"></ion-img>
+        <ion-img class="stampsize" *ngIf="petshop.stamp == 'stampred'" src="assets/icon/petRating4.png"></ion-img>
+        <p style="margin-left: 2%; margin-top: 4%;" class="pStyle">{{petshop.dogType}}</p>
+      </div>
+      <ion-label color="medium">
+        <div style="margin-left: 7%;">{{petshop.contact}}</div>
+      </ion-label>
+      <ion-label>  
+        <span style="margin-left: 7%;"><ion-icon name="star"></ion-icon> 
+          {{petshop.rating}}
+        </span>
+      </ion-label>
     </ion-text>
-    <!-- <ion-card-header *ngIf="petshop.downloadURL != null">
-      <img src="{{petshop.downloadURL}}" style="max-width: 100%; height: auto;"/>
-    </ion-card-header>
-    <ion-card-header *ngIf="petshop.downloadURL == null">
-      <img src="assets/imgs/PetshopDefault.png"/>
-    </ion-card-header>
-    <ion-card-title>
-      <ion-label style="margin-left: 5%;">{{petshop.name}}</ion-label>
-    </ion-card-title>
-    <ion-card-subtitle>
-      <ion-label class="contato" style="margin-left: 5%;">{{petshop.contact}}</ion-label>
-    </ion-card-subtitle> -->
   </ion-label>
 </ion-item>
+
+<style>
+  .dog-type-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .stampsize {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+  }
+</style>
