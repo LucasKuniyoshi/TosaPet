@@ -9,6 +9,7 @@ export default class User {
     public senha: string,
     public uid?: string,
     public downloadURL?: string,
-    public id?: string
+    public id?: string,
+    public favorites?: string[]
   ) {}
 }

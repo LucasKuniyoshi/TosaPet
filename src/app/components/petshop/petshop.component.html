@@ -24,6 +24,9 @@
   </ion-thumbnail>
   <ion-label> <!--color="light" style="max-width: 80%; margin-left: 9.68%;"-->
     <h2>{{petshop.name}}</h2>
+    <ion-button (click)="toggleFavorite(petshop.id)">
+      <ion-icon [name]="isFavorite(petshop.id) ? 'heart' : 'heart-outline'"></ion-icon>
+    </ion-button>
     <ion-text color="medium">
       <!-- COLOCAR CARIMBO -->
       <p class="pStyle">{{petshop.dogType}}</p>

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Petshop from 'src/app/model/entities/Petshop';
+import { UserfirebaseService } from 'src/app/model/services/userfirebase.service';
 
 @Component({
   selector: 'app-petshop',
@@ -9,8 +10,11 @@ import Petshop from 'src/app/model/entities/Petshop';
 })
 export class PetshopComponent  implements OnInit {
   @Input() petshop: Petshop;
+  petshops = []; // Sua lista de petshops
+  user: any;
+  favorites: string[] = [];
 
-  constructor(private router : Router) { }
+  constructor(private router : Router,private userService: UserfirebaseService) { }
 
   ngOnInit() {}
 
@@ -19,4 +23,15 @@ export class PetshopComponent  implements OnInit {
     //console.log(index);
   }
 
+  toggleFavorite(petshopId: string) {
+    if (this.isFavorite(petshopId)) {
+      this.userService.removeFavorite(this.user.uid, petshopId);
+    } else {
+      this.userService.addFavorite(this.user.uid, petshopId);
+    }
+  }
+
+  isFavorite(petshopId: string): boolean {
+    return this.favorites.includes(petshopId);
+  }
 }

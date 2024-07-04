@@ -105,9 +105,12 @@
     <span *ngIf="formUser.get('confSenha')?.dirty &&
     (this.formUser.get('senha')?.value != this.formUser.get('confSenha')?.value)">As senha precisam ser iguais</span>
     <ion-item>
-      <ion-button size="default" color="success" shape="round">
-        <input type="file" (change)="uploadFile($event.target)" />
-      </ion-button>
+      <ion-label class="centerLabel">
+        <ion-button expand="block" fill="outline" color="dark" size="medium">
+          <input type="file" (change)="uploadFile($event.target)" class="custom-file-input"/>
+          Inserir foto de Perfil
+        </ion-button>
+      </ion-label>
     </ion-item>
     <ion-button expand="block" class="entrarColor" type="submit">Cadastrar</ion-button> <!-- Deve haver somente 1 submit type -->
   </form>

@@ -1,7 +1,7 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <!-- Botão de voltar -->
+      Botão de voltar
       <ion-back-button color="dark" defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>Pet Shops favoritos</ion-title>
@@ -10,27 +10,30 @@
 
 <ion-content>
   <ion-list>
-    <ion-item-group>
-      <ion-list>
-        <app-petshop *ngFor="let petshop of lista_Petshops" (click)="GoToDetails(petshop)" [petshop]="petshop"></app-petshop>
-      </ion-list>
-      <ion-item>
-        <ion-label col="6">
-          Pet shops fav 1
-        </ion-label>
-        <ion-label col="6">
-          alguma coisa da petshop
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        Pet shops fav 4
-      </ion-item>
-      <ion-item>
-        Pet shops fav 3
-      </ion-item>
-      <ion-item>
-        Pet shops fav 2
-      </ion-item>
-    </ion-item-group>
+    <ion-item *ngFor="let petshop of favoritePetshops">
+      <ion-label>{{ petshop.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+ -->
+ <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Botão de voltar -->
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <app-petshop *ngFor="let petshop of favoritePetshops" (click)="viewDetails(petshop)" [petshop]="petshop"></app-petshop>
+    <!-- <ion-item *ngFor="let petshop of favoritePetshops" (click)="viewDetails(petshop)">
+      <ion-label>
+        <h2>{{ petshop.name }}</h2>
+        <p>{{ petshop.address }}</p>
+      </ion-label>
+    </ion-item> -->
   </ion-list>
 </ion-content>

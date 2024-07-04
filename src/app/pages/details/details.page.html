@@ -5,6 +5,11 @@
       <ion-back-button color="dark" defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>{{petshop.name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleFavorite()">
+        <ion-icon [name]="isFavorite ? 'heart' : 'heart-outline'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
