@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  googleMapsApiKey: 'AIzaSyAxvbtZpKOreKI2Y-JmTeZwZs-eN9z_DVU',
   firebaseConfig : {
     apiKey: "AIzaSyDkBv49oLULUu_-uEzAL2QXrAbpw7qZeJg",
     authDomain: "tosa-pet.firebaseapp.com",

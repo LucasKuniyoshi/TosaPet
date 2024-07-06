@@ -55,13 +55,29 @@
       <ion-title>TosaPet</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding"> 
+
+  <ion-content class="ion-padding" *ngIf="apiLoaded | async"> 
     <ion-list>
-      <ion-item color="tertiary" style="border-radius: 2%;">
-        <ion-label style="height: 30vh; width: 94%;">
-          <ion-text style="margin-left: 135px;">Mapa</ion-text> 
+      <ion-item lines="none">
+        <ion-label style="border-radius: 5%; width: auto; height: 40vh; margin-left: 2.2%;">
+          <google-map
+            height="100%"
+            width="100%"
+            [center]="center"
+            [zoom]="zoom">
+          </google-map>
         </ion-label>
       </ion-item>
+      <!-- <ion-item color="tertiary" style="border-radius: 2%;">
+        <ion-label style="height: 35vh; width: 94%;">
+          <google-map
+            height="100%"
+            width="100%"
+            [center]="center"
+            [zoom]="zoom">
+          </google-map> 
+        </ion-label>
+      </ion-item> -->
       <ion-item-group>
         <ion-card> <!--style="padding-top: 5vh;"-->
           <app-searchbar (ionChange)="PetshopFilter($event)"></app-searchbar>

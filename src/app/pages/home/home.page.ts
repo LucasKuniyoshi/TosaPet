@@ -1,16 +1,18 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonSearchbar } from '@ionic/angular';
 import Petshop from 'src/app/model/entities/Petshop';
 import { AuthService } from 'src/app/model/services/auth.service';
 import { FirebaseService } from 'src/app/model/services/firebase.service';
+import { Geolocation } from '@capacitor/geolocation';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit{
   @ViewChild('mySearchbar') searchbar: IonSearchbar;
   lista_Petshops: Petshop[] = [];
   public user: any; 
@@ -21,6 +23,10 @@ export class HomePage {
     icon: 'ban-outline',
     title: 'Nada por aqui.. :('
   };
+  center: google.maps.LatLngLiteral;
+  zoom: number = 15;
+  apiLoaded: Promise<boolean>;
+
   constructor(private firebase: FirebaseService, private router: Router, private auth: AuthService) {
     this.isLoading = true;
     this.hasSearched = false;
@@ -44,6 +50,8 @@ export class HomePage {
   }
 
   ngOnInit() {
+    this.apiLoaded = this.loadGoogleMapsApi();
+    this.getCurrentLocation();
     this.isLoading = true;
     setTimeout(() => {
       // Colocar lista de petshops
@@ -98,5 +106,22 @@ export class HomePage {
   returnSearch() {
     this.hasSearched = false;
     this.searchbar.value = null;
+  }
+
+  async getCurrentLocation() {
+    const coordinates = await Geolocation.getCurrentPosition();
+    this.center = {
+      lat: coordinates.coords.latitude,
+      lng: coordinates.coords.longitude,
+    };
+  }
+
+  loadGoogleMapsApi(): Promise<boolean> {
+    return new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${environment.googleMapsApiKey}`;
+      script.onload = () => resolve(true);
+      document.head.appendChild(script);
+    });
   }
 }
