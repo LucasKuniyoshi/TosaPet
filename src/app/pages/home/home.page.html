@@ -65,19 +65,10 @@
             width="100%"
             [center]="center"
             [zoom]="zoom">
+            <map-marker [position]="center"></map-marker>
           </google-map>
         </ion-label>
       </ion-item>
-      <!-- <ion-item color="tertiary" style="border-radius: 2%;">
-        <ion-label style="height: 35vh; width: 94%;">
-          <google-map
-            height="100%"
-            width="100%"
-            [center]="center"
-            [zoom]="zoom">
-          </google-map> 
-        </ion-label>
-      </ion-item> -->
       <ion-item-group>
         <ion-card> <!--style="padding-top: 5vh;"-->
           <app-searchbar (ionChange)="PetshopFilter($event)"></app-searchbar>
