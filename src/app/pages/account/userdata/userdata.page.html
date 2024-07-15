@@ -48,11 +48,21 @@
         </ion-item>
         <ion-item>
           Tamanho: 
-          <ion-input style="margin-left: 2%;" placeholder="{{user?.size}}"></ion-input>
+          <ion-select interface="action-sheet" style="margin-left: 2%;" placeholder="{{user?.size}}">
+            <ion-select-option value="Pequeno">Pequeno</ion-select-option>
+            <ion-select-option value="Médio">Médio</ion-select-option>
+            <ion-select-option value="Grande">Grande</ion-select-option>
+          </ion-select>
         </ion-item>
         <ion-item>
           Comportamento: 
-          <ion-input style="margin-left: 2%;" placeholder="{{user?.behavior}}"></ion-input>
+          <ion-select interface="action-sheet" style="margin-left: 2%;" placeholder="{{user?.behavior}}">
+            <ion-select-option value="Dócil">Dócil</ion-select-option>
+            <ion-select-option value="Manso">Manso</ion-select-option>
+            <ion-select-option value="Calmo">Calmo</ion-select-option>
+            <ion-select-option value="Falso manso">Falso manso</ion-select-option>
+            <ion-select-option value="Agressivo">Agressivo</ion-select-option>
+          </ion-select>
         </ion-item>
       </ion-list>
     </ion-label>
