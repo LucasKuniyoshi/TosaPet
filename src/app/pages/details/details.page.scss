@@ -7,3 +7,11 @@
 .info{
     border-top-style: round($number: 25);
 }
+
+.centerItemColor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: crimson;
+    // border-style: ridge;
+}

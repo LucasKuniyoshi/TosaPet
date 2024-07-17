@@ -2,7 +2,7 @@
   <ion-toolbar color="danger">
     <ion-buttons slot="start">
       <!-- Botão de voltar -->
-      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>{{petshop.name}}</ion-title>
     <ion-buttons slot="end">
@@ -14,57 +14,88 @@
 </ion-header>
 
 <ion-content>
-  <div class="center-content">
-    <ion-list lines="none">
-      <ion-item *ngIf="petshop.downloadURL != null">
-        <ion-label class="centerItem">
-          <img [src]="petshop.downloadURL" style="max-width: 100%" *ngIf="petshop && petshop.downloadURL">
-        </ion-label>
-      </ion-item>
-      <ion-item *ngIf="petshop.downloadURL == null">
-        <ion-label class="centerItem">
-          <img src="assets/imgs/PetshopDefault.png" >
-        </ion-label>
-      </ion-item>
-      <ion-item *ngIf="petshop.stamp == 'stampgreen'">
-        <img src="assets/icon/petRating1.png">
-      </ion-item>
-      <ion-item *ngIf="petshop.stamp == 'stampblue'">
-        <img src="assets/icon/petRating3.png">
-      </ion-item>
-      <ion-item *ngIf="petshop.stamp == 'stampyellow'">
-        <img src="assets/icon/petRating2.png">
-      </ion-item>
-      <ion-item *ngIf="petshop.stamp == 'stampred'">
-        <img src="assets/icon/petRating4.png">
-      </ion-item>
-      <ion-item>
-        Raça(s) 
-        <ion-text> : {{petshop.dogType}}</ion-text>
-      </ion-item>
-      <ion-item>
-        {{petshop.address}}
-      </ion-item>
-      <ion-item>
-        <ion-label class="centerItem">
-          Preço médio
-          <ion-text>: R${{petshop.price}}</ion-text>
+  <ion-card>
+    <div>
+      <ion-list lines="none">
+        <ion-item-group>
+          <ion-item *ngIf="petshop.downloadURL != null">
+              <ion-label class="centerItem">
+                <img [src]="petshop.downloadURL" style="max-width: 100%" *ngIf="petshop && petshop.downloadURL">
+              </ion-label>
+            </ion-item>
+            <ion-item *ngIf="petshop.downloadURL == null">
+              <ion-label class="centerItem">
+                <img src="assets/imgs/PetshopDefault.png" >
+              </ion-label>
+            </ion-item>
+        </ion-item-group>
+        <div class="dog-type-container">
+          <ion-img class="stampsize" *ngIf="petshop.stamp == 'stampgreen'" src="assets/icon/petRating1.png"></ion-img>
+          <ion-img class="stampsize" *ngIf="petshop.stamp == 'stampblue'" src="assets/icon/petRating3.png"></ion-img>
+          <ion-img class="stampsize" *ngIf="petshop.stamp == 'stampyellow'" src="assets/icon/petRating2.png"></ion-img>
+          <ion-img class="stampsize" *ngIf="petshop.stamp == 'stampred'" src="assets/icon/petRating4.png"></ion-img>
+          <h3 style="margin-left: 2%; margin-top: 4%; color: black;" class="pStyle">{{petshop.dogType}}</h3>
+        </div>
+        <ion-item>
+          <ion-label class="centerItem">
+            <div>
+              <p class="centerItemColor">Endereço</p>
+              <ion-text>{{petshop.address}}</ion-text>
+            </div>
           </ion-label>
-      </ion-item>
-      <ion-item>
-        {{petshop.rating}}
-      </ion-item>
-      <ion-item>
-        <ion-label class="centerItem">
-          Horário de funcionamento 
-          <ion-text>: {{petshop.openingHours}}h - {{petshop.hourEnding}}h</ion-text>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label class="centerItem">
-          <ion-text>{{petshop.contact}}</ion-text>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-  </div>
+        </ion-item>
+        <ion-item>
+          <ion-label class="centerItem">
+            <div>
+              <p class="centerItemColor">Contato</p>
+              <ion-text>{{petshop.contact}}</ion-text>
+            </div>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="centerItem">
+            <div>
+              <p class="centerItemColor">Média de Preço</p>
+              <ion-text>R${{petshop.price}} - R${{petshop.priceMax}}</ion-text>
+            </div>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="centerItem">
+            <div>
+              <p class="centerItemColor">Horário de funcionamento</p>
+              <ion-label class="centerItem">
+                <ion-text>{{petshop.openingHours}}h - {{petshop.hourEnding}}h</ion-text>
+              </ion-label>
+            </div>
+          </ion-label>
+        </ion-item>
+        <!-- <p>
+          <ion-label class="centerItem">
+            Horário de funcionamento 
+            <ion-text>: {{petshop.openingHours}}h - {{petshop.hourEnding}}h</ion-text>
+          </ion-label>
+        </p> -->
+        <p class="centerItemColor">
+          {{petshop.rating}}.0
+          <ion-label style="margin-top: 0.11%;">
+            <ion-icon style="height: 13px; width: 13px;" name="star-outline"></ion-icon>
+          </ion-label>
+        </p>
+      </ion-list>
+    </div>
+  </ion-card>
 </ion-content>
+
+<style>
+  .dog-type-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .stampsize {
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+  }
+</style>
