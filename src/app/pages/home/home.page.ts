@@ -116,22 +116,22 @@ export class HomePage implements OnInit{
     };
   }
 
-  // loadGoogleMapsApi(): Promise<boolean> {
-  //   return new Promise((resolve) => {
-  //     const script = document.createElement('script');
-  //     script.src = `https://maps.googleapis.com/maps/api/js?key=${environment.googleMapsApiKey}`;
-  //     script.onload = () => resolve(true);
-  //     document.head.appendChild(script);
-  //   });
-  // }
   loadGoogleMapsApi(): Promise<boolean> {
     return new Promise((resolve) => {
       const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${environment.googleMapsApiKey}&map_ids=bb7639cf3431cb48`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${environment.googleMapsApiKey}`;
       script.onload = () => resolve(true);
       document.head.appendChild(script);
     });
   }
+  // loadGoogleMapsApi(): Promise<boolean> {
+  //   return new Promise((resolve) => {
+  //     const script = document.createElement('script');
+  //     script.src = `https://maps.googleapis.com/maps/api/js?key=${environment.googleMapsApiKey}&map_ids=bb7639cf3431cb48`;
+  //     script.onload = () => resolve(true);
+  //     document.head.appendChild(script);
+  //   });
+  // }
 
   addMarker(position: google.maps.LatLngLiteral) {
     const map = new google.maps.Map(document.getElementById('map') as HTMLElement, {

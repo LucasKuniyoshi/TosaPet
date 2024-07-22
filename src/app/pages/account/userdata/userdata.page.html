@@ -11,14 +11,15 @@
 <ion-content>
   <ion-item lines="none" style="padding-top: 5%;">
     <ion-label *ngIf="user?.downloadURL != null">
-      <img class="profile-picture" src="{{user?.downloadURL}}">
+      <img class="profile-picture" [src]="user?.downloadURL">
     </ion-label>
     <ion-label *ngIf="user?.downloadURL == null">
       <img src="./assets/imgs/avatar.png">
     </ion-label>
   </ion-item>
   <div style="display: flex; justify-content: center; padding-top: 10px;">
-    <ion-button color="tertiary" fill="outline" size="small" class="profile-picture" slot="center" style="width: 40%;">
+    <ion-button expand="block" fill="outline" color="dark">
+      <input type="file" (change)="uploadFile($event.target)" class="custom-file-input"/>
       Alterar Foto
     </ion-button>
   </div>
@@ -27,15 +28,15 @@
     <ion-label>
       <ion-list>
         <ion-item style="font-style: italic;">
-          <ion-input style="margin-left: 2%;" placeholder="{{user?.userName}}"></ion-input>
+          <ion-input [(ngModel)]="userName" style="margin-left: 2%;" placeholder="{{user?.userName}}"></ion-input>
         </ion-item>
         <ion-item>
           Email: 
-          <ion-input style="margin-left: 2%;" placeholder="{{user?.email}}"></ion-input>
+          <ion-input [(ngModel)]="email" style="margin-left: 2%;" placeholder="{{user?.email}}" readonly></ion-input>
         </ion-item>
         <ion-item>
           Telefone: 
-          <ion-input style="margin-left: 2%;" placeholder="{{user?.phone}}"></ion-input>
+          <ion-input [(ngModel)]="phone" style="margin-left: 2%;" placeholder="{{user?.phone}}"></ion-input>
         </ion-item>
         <ion-item lines="none"> 
           <ion-label fill="full" class="centerItem">
@@ -44,11 +45,11 @@
         </ion-item>
         <ion-item>
           Raça: 
-            <ion-input style="margin-left: 2%;" placeholder="{{user?.dogType}}"></ion-input>
+            <ion-input [(ngModel)]="dogType" style="margin-left: 2%;" placeholder="{{user?.dogType}}"></ion-input>
         </ion-item>
         <ion-item>
           Tamanho: 
-          <ion-select interface="action-sheet" style="margin-left: 2%;" placeholder="{{user?.size}}">
+          <ion-select [(ngModel)]="size" interface="action-sheet" style="margin-left: 2%;" placeholder="{{user?.size}}">
             <ion-select-option value="Pequeno">Pequeno</ion-select-option>
             <ion-select-option value="Médio">Médio</ion-select-option>
             <ion-select-option value="Grande">Grande</ion-select-option>
@@ -56,7 +57,7 @@
         </ion-item>
         <ion-item>
           Comportamento: 
-          <ion-select interface="action-sheet" style="margin-left: 2%;" placeholder="{{user?.behavior}}">
+          <ion-select [(ngModel)]="behavior" interface="action-sheet" style="margin-left: 2%;" placeholder="{{user?.behavior}}">
             <ion-select-option value="Dócil">Dócil</ion-select-option>
             <ion-select-option value="Manso">Manso</ion-select-option>
             <ion-select-option value="Calmo">Calmo</ion-select-option>
@@ -67,4 +68,5 @@
       </ion-list>
     </ion-label>
   </ion-card>
+  <ion-button expand="block" (click)="editar()">Salvar</ion-button>
 </ion-content>

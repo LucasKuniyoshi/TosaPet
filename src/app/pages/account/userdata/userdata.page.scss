@@ -27,3 +27,13 @@
   // border-style: ridge;
   // border-color: darkkhaki;
 }
+
+.custom-file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  height: 50%;
+  width: 80%;
+  cursor: pointer;
+}
